@@ -1,8 +1,7 @@
 name: java workflow
 on: 
- workflow_dispatch:
   push:
-    branch: 
+    branches:
       - main
 
 jobs:
