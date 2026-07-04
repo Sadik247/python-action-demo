@@ -1,0 +1,26 @@
+name: java workflow
+on: 
+ workflow_dispatch:
+  push:
+    branch: 
+      - main
+
+jobs:
+  java_demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check repository
+        users: actions/checkout@v4
+          
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'   # JDK vendor
+          java-version: '17'        # JDK version
+
+      - name: Compile java file
+        run: javac hello.java
+
+      - name: Run java application
+        run: java hello
