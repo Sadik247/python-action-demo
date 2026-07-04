@@ -1,0 +1,35 @@
+name: python artifact
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  
+
+jobs:
+  java_demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check repository
+        uses: actions/checkout@v4
+
+      - name: install python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: check python version
+        run: python --version
+
+      - name: run python file
+        run: python app1.py
+    
+      - name: show generate file
+        run: cat result.txt
+
+      - name: upload result
+        uses: actions/upload-artifact@v4
+        with:
+             name: python_result_file
+             path: result.txt
