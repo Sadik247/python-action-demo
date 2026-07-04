@@ -7,7 +7,7 @@ on:
   
 
 jobs:
-  java_demo:
+  artifact_path_python:
     runs-on: ubuntu-latest
 
     steps:
