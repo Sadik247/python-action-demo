@@ -8,7 +8,7 @@ on:
 
 jobs:
   artifact_path_python:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: check repository
